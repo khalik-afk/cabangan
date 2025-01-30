@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Diskon</title>
+</head>
+<body>
+    <input type="number" id="total" placeholder="Total Belanja">
+    <button onclick="hitungDiskon()">Hitung Diskon</button>
+    <p id="hasil"></p>
+
+    <script>
+        function hitungDiskon() {
+            let total = parseFloat(document.getElementById('total').value);
+            let diskon = 0;
+
+            if (total > 150000) diskon = 0.15;
+            else if (total > 500000) diskon = 0.10;
+
+            let totalDiskon = total * diskon;
+            let hargaAkhir = total - totalDiskon;
+
+            document.getElementById('hasil').textContent = 'Diskon: ' + totalDiskon + ' | Harga Akhir: ' + hargaAkhir;
+        }
+    </script>
+</body>
+</html>
