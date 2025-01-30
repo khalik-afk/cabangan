@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operasi Matematika</title>
+</head>
+<body>
+    <input type="number" id="angka1" placeholder="Angka pertama">
+    <input type="number" id="angka2" placeholder="Angka kedua">
+    <select id="operasi">
+        <option value="tambah">+</option>
+        <option value="kurang">-</option>
+        <option value="kali">*</option>
+        <option value="bagi">/</option>
+    </select>
+    <button onclick="hitung()">Hitung</button>
+    <p id="hasil"></p>
+
+    <script>
+        function hitung() {
+            let a = parseFloat(document.getElementById('angka1').value);
+            let b = parseFloat(document.getElementById('angka2').value);
+            let op = document.getElementById('operasi').value;
+            let result;
+
+            if (op === 'tambah') result = a + b;
+            if (op === 'kurang') result = a - b;
+            if (op === 'kali') result = a * b;
+            if (op === 'bagi') result = b !== 0 ? a / b : 'Error';
+
+            document.getElementById('hasil').textContent = 'Hasil: ' + result;
+        }
+    </script>
+</body>
+</html>
