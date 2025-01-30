@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positif, Negatif, atau Nol</title>
+</head>
+<body>
+    <input type="nomor" id="angka" placeholder="Masukkan angka">
+    <button onclick="cekAngka()">Cek</button>
+    <p id="hasil"></p>
+
+    <script>
+        function cekAngka() {
+            let angka = parseInt(document.getElementById('angka').value);
+            let hasil = angka > 0 ? "Positif" : (angka < 0 ? "Negatif" : "Nol");
+            document.getElementById('hasil').textContent = "Angka : " + hasil;
+        }
+    </script>
+</body>
+</html>
