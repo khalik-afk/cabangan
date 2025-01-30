@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahun Kabisat</title>
+</head>
+<body>
+    <input type="number" id="tahun" placeholder="Masukkan Tahun">
+    <button onclick="cekKabisat()">Cek</button>
+    <p id="hasil"></p>
+
+    <script>
+        function cekKabisat() {
+            let tahun = parseInt(document.getElementById('tahun').value);
+            let kabisat = (tahun % 4 === 0 && tahun % 100 !== 0) || (tahun % 400 === 0);
+            document.getElementById('hasil').textContent = kabisat ? tahun + " adalah tahun kabisat." : tahun + " bukan tahun kabisat.";
+        }
+    </script>
+</body>
+</html>
